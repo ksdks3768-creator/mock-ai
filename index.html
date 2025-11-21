@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Interview Coach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+            },
+            colors: {
+              // New light theme for setup screen
+              'brand-bg': '#F9F5F3',
+              'brand-text-dark': '#262626',
+              'brand-text-light': '#78716C',
+              'brand-card': '#FFFFFF',
+              'brand-input': '#F5F0EE',
+              'brand-accent-green': '#899984',
+              'brand-accent-green-light': '#E8EDE7',
+              
+              // Old dark theme colors for interview screen
+              'brand-primary': '#4f46e5',
+              'brand-secondary': '#7c3aed',
+              'brand-accent': '#10b981',
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in-scale': 'fadeInScale 0.2s ease-out forwards',
+            },
+            keyframes: {
+              fadeInScale: {
+                '0%': { opacity: '0', transform: 'scale(0.95) translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <style>
+    /* Ensure full height for the app container */
+    html, body, #root {
+      height: 100%;
+      overflow: hidden; /* Prevent scrollbars on the body */
+    }
+  
+    /* Custom Scrollbar Styling */
+    /* For Webkit-based browsers (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+      width: 10px; /* Width of the vertical scrollbar */
+      height: 10px; /* Height of the horizontal scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent; /* Makes the track invisible */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(120, 113, 108, 0.25); /* Uses a semi-transparent light text color from the theme */
+      border-radius: 20px; /* Fully rounded corners */
+      border: 2px solid transparent; /* Creates padding around the thumb */
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(120, 113, 108, 0.5); /* Darkens on hover for better UX */
+    }
+
+    /* For Firefox */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(120, 113, 108, 0.5) transparent;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
